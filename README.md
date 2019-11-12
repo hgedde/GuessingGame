@@ -37,7 +37,14 @@ while guesses !=0:
                 for everylet in list2: # Compare it to every letter in the second list
                     if eachlet == everylet:
                        if list1.index(eachlet) == list2.index(everylet):
-                            usersuccess.insert(list2.index(everylet), 1)
+                            usersuccess.insert(list2.index(everylet), list2[list2.index(everylet)])
                             usersuccess.pop(list2.index(everylet) + 1)
                             print("This is your progress so far:")
                             print(usersuccess)
+
+
+
+# This shows the answer to the player after they have done their maxiumum number of inputs
+if guesses < 0:
+    print("You ran out of guesses. Oh no...The answer is: ")
+    print(randomNum)
