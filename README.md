@@ -4,7 +4,7 @@ print("If any of your digits match the random number's digits, you will be told.
 print("You have 10 tries!")
 
 import random
-
+from operator import itemgetter
 # This creates the random number for the player to guess
 randomNum = random.randint(1000,9999)
 
@@ -37,12 +37,7 @@ while guesses !=0:
                 for everylet in list2: # Compare it to every letter in the second list
                     if eachlet == everylet:
                        if list1.index(eachlet) == list2.index(everylet):
-                            for i in list1:
-                                usersuccess.index
-
-
-# This shows the answer to the player after they have done their maxiumum number of inputs
-if guesses < 0:
-    print("You ran out of guesses. Oh no...The answer is: ")
-    print(randomNum)
-
+                            usersuccess.insert(list2.index(everylet), 1)
+                            usersuccess.pop(list2.index(everylet) + 1)
+                            print("This is your progress so far:")
+                            print(usersuccess)
